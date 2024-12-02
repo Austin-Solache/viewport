@@ -1,7 +1,35 @@
-/* YOUR NAME GOES HERE */
+/* Austin Solache */
 
 /* --------------- ADD CSS RESET TO THE FILE HERE --------------- */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 
 /* ----- AUTOPREFIXER FOR VS CODE WAS USED FOR VENDOR PREFIXES ----- */
@@ -31,9 +59,12 @@
 
 /* ----- CHECK FOR USER DARK MODE PREFERENCE ----- */
 /* --------------- BEGIN USER PREFERS DARK COLOR SCHEME QUERY --------------- */
-
 /* CHANGE THE BODY'S BACKGROUND COLOR TO THE DARK GRAY IF THE USER PREFERS DARK MODE */
-
+@media (prefers-color-scheme:dark) {
+    body { 
+        background: #333333; color: white; 
+    }
+}
 /* --------------- END USER PREFERS DARK COLOR SCHEME QUERY --------------- */
 
 
@@ -91,13 +122,20 @@ footer .icon{
 
 /* ----- HANDLE PREFERS REDUCED MOTION FOR THE ICON ANIMATIONS ----- */
 /* --------------- BEGIN USER PREFERS REDUCED MOTION QUERY --------------- */
+@media (prefers-reduced-motion: reduce) {
+
     @-webkit-keyframes icon-animation {
         0% { font-variation-settings: "TIME" 1; }
     }
     @keyframes icon-animation {
         0% { font-variation-settings: "TIME" 1; }
     }
-/* --------------- END USER PREFERS REDUCED MOTION QUERY --------------- */
+
+    footer .icon {
+        -webkit-animation: none;
+        animation: none;
+        }
+    }----------- END USER PREFERS REDUCED MOTION QUERY --------------- */
 
 
 
